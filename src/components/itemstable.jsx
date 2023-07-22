@@ -11,16 +11,16 @@ export const Itemstable = ({ items, removeItem, increaCount, decreaCount }) => (
       <div className='PriceTable' key={item.id}>
         <div className='PriceTable__images'>
           <Image src={'./images/' + item.img}
-          height={'120px'}
-          width={ '80px'}
-           alt="foto" />
+            height={'120px'}
+            width={'80px'}
+            alt="foto" />
 
         </div>
         <div className='PriceTable__title'><h4>{item.title}</h4></div>
 
         <div className='PriceTable__pricevan'><b>{item.price}.грн</b></div>
         <div className='shopCounter'>
-          <button onClick={() => decreaCount(item.id,item.amount)} className='minus'>-</button>
+          <button onClick={() => decreaCount(item.id, item.amount)} className='minus'>-</button>
           <span className='count'>{new Intl.NumberFormat().format(item.amount)}</span>
           <button onClick={() => increaCount(item.id)} className='plus'>+</button>
           <div className='TotalPrice'>{new Intl.NumberFormat().format(item.price * item.amount)}.грн</div>
