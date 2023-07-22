@@ -18,7 +18,7 @@ export const ShopingCart = () => {
       <button>Купити</button>
     </div>
   );
-  
+
   const EmptyTemplate = (
     <div className='Empty'>
       <h6>Кошик порожній</h6>
@@ -26,29 +26,29 @@ export const ShopingCart = () => {
     </div>
   );
 
-const hadleRemoveItem=(id)=>{
- 
-  setItems(items.filter(item=>item.id !==id));
-};
-const hedleIncreaCount=(id)=>{
-  setItems(items.map(item=>{
-    if(item.id===id){
-      item.amount++;
-    }
-    return item;
-  }) );
-}
-const hedleDecreaCount=(id,amount)=>{
-  if(amount<2){
-    hadleRemoveItem(id)
-  }else{
-  setItems(items.map(item=>{
-    if(item.id===id){
-      item.amount--;
-    }
-    return item;
-  }) );
-}
+  const hadleRemoveItem = (id) => {
+    setItems(items.filter(item => item.id !== id));
+  };
+
+  const hedleIncreaCount = (id) => {
+    setItems(items.map(item => {
+      if (item.id === id) {
+        item.amount++;
+      }
+      return item;
+    }));
+  }
+  const hedleDecreaCount=(id, amount) => {
+    if (amount < 2) {
+      hadleRemoveItem(id);
+    }else{
+    setItems(items.map(item => {
+      if (item.id === id) {
+        item.amount--;
+      }
+      return item;
+    }));
+  }
 }
   return (
     <div className='cart__content'>
@@ -56,15 +56,13 @@ const hedleDecreaCount=(id,amount)=>{
       {
         !!items.length ?
           <Itemstable items={items}
-          removeItem={hadleRemoveItem}
-          increaCount={hedleIncreaCount}
-          decreaCount={hedleDecreaCount}
-           />
+            removeItem={hadleRemoveItem}
+            increaCount={hedleIncreaCount}
+            decreaCount={hedleDecreaCount}
+          />
           : EmptyTemplate
       }
-
       {!!items.length && Footer}
-
     </div>
-  )
+  );
 }
