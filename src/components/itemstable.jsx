@@ -1,4 +1,4 @@
-/* eslint-disable no-undef */
+
 
 import React from 'react'
 import { FaTrash } from 'react-icons/fa';
@@ -11,9 +11,7 @@ export const Itemstable = ({ items, removeItem, increaCount, decreaCount }) => (
       <div className='PriceTable' key={item.id}>
         <div className='PriceTable__images'>
           <Image src={'./images/' + item.img}
-            height={'120px'}
-            width={'80px'}
-            alt="foto" />
+           style={{width: '80px', height: '120px'}} alt='react logo' />
 
         </div>
         <div className='PriceTable__title'><h4>{item.title}</h4></div>

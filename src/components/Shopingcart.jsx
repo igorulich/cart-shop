@@ -13,7 +13,7 @@ export const ShopingCart = () => {
   const Footer = (
     <div className='ResultPanel'>
       <span>
-        Ітого:<span className='value'>{result}.грн</span>
+        Ітого:<span className='value'>{new Intl.NumberFormat().format(result)}.грн</span>
       </span>
       <button>Купити</button>
     </div>
