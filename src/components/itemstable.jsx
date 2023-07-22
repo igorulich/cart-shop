@@ -4,7 +4,7 @@ import React from 'react'
 import { FaTrash } from 'react-icons/fa';
 import Image from 'react-bootstrap/Image';
 
-export const Itemstable = ({ items, removeItem, increaCount}) => (
+export const Itemstable = ({ items, removeItem, increaCount, decreaCount}) => (
   <div className='PriceTable__conteiner'>
 
     {items.map(item => (
@@ -17,7 +17,7 @@ export const Itemstable = ({ items, removeItem, increaCount}) => (
        
         <div className='PriceTable__pricevan'><b>{item.price}.грн</b></div>
         <div className='shopCounter'>
-        <button className='minus'>-</button>
+        <button onClick={()=>decreaCount(item.id)} className='minus'>-</button>
         <span className='count'>{item.amount}</span>
         <button onClick={()=>increaCount(item.id)} className='plus'>+</button>
         <div className='TotalPrice'>{item.price * item.amount}.грн</div>

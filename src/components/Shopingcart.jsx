@@ -38,6 +38,18 @@ const hedleIncreaCount=(id)=>{
     return item;
   }) );
 }
+const hedleDecreaCount=(id,amount)=>{
+  if(amount<2){
+    hadleRemoveItem(id)
+  }else{
+  setItems(items.map(item=>{
+    if(item.id===id){
+      item.amount--;
+    }
+    return item;
+  }) );
+}
+}
   return (
     <div className='cart__content'>
       <h1>Кошик</h1>
@@ -46,6 +58,7 @@ const hedleIncreaCount=(id)=>{
           <Itemstable items={items}
           removeItem={hadleRemoveItem}
           increaCount={hedleIncreaCount}
+          decreaCount={hedleDecreaCount}
            />
           : EmptyTemplate
       }
