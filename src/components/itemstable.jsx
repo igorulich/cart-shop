@@ -19,7 +19,7 @@ export const Itemstable = ({ items, removeItem, increaCount, decreaCount }) => (
         <div className='PriceTable__pricevan'><b>{item.price}.грн</b></div>
         <div className='shopCounter'>
           <button onClick={() => decreaCount(item.id, item.amount)} className='minus'>-</button>
-          <span className='count'>{new Intl.NumberFormat().format(item.amount)}</span>
+          <span className='count'>{item.amount}</span>
           <button onClick={() => increaCount(item.id)} className='plus'>+</button>
           <div className='TotalPrice'>{new Intl.NumberFormat().format(item.price * item.amount)}.грн</div>
           <FaTrash onClick={() => removeItem(item.id)} className='Dellete' />
